@@ -14,6 +14,7 @@
 		F01788E61E4520960062F3D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F01788E41E4520960062F3D9 /* LaunchScreen.storyboard */; };
 		F01788F11E4520960062F3D9 /* InstagramActivityIndicatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01788F01E4520960062F3D9 /* InstagramActivityIndicatorTests.swift */; };
 		F01788FC1E4520960062F3D9 /* InstagramActivityIndicatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01788FB1E4520960062F3D9 /* InstagramActivityIndicatorUITests.swift */; };
+		F017890A1E4525530062F3D9 /* InstagramActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01789091E4525530062F3D9 /* InstagramActivityIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F01788F71E4520960062F3D9 /* InstagramActivityIndicatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagramActivityIndicatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01788FB1E4520960062F3D9 /* InstagramActivityIndicatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramActivityIndicatorUITests.swift; sourceTree = "<group>"; };
 		F01788FD1E4520960062F3D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F01789091E4525530062F3D9 /* InstagramActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramActivityIndicator.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				F01788DB1E4520960062F3D9 /* AppDelegate.swift */,
 				F01788DD1E4520960062F3D9 /* ViewController.swift */,
+				F01789091E4525530062F3D9 /* InstagramActivityIndicator.swift */,
 				F01788DF1E4520960062F3D9 /* Main.storyboard */,
 				F01788E21E4520960062F3D9 /* Assets.xcassets */,
 				F01788E41E4520960062F3D9 /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F017890A1E4525530062F3D9 /* InstagramActivityIndicator.swift in Sources */,
 				F01788DE1E4520960062F3D9 /* ViewController.swift in Sources */,
 				F01788DC1E4520960062F3D9 /* AppDelegate.swift in Sources */,
 			);

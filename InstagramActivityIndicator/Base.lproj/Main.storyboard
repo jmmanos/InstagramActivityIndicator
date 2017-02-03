@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12100" systemVersion="16E144f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12072"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstagramActivityIndicator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,10 +20,75 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-zD-D4x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kph-Gw-o5v" customClass="InstagramActivityIndicator" customModule="InstagramActivityIndicator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="2dT-Er-bN9" appends="YES" id="f2E-jV-ipC"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-i3-dOw" customClass="InstagramActivityIndicator" customModule="InstagramActivityIndicator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="128" width="375" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="qdh-Dd-lfU" appends="YES" id="eEW-pK-Dnu"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4Q-H7-hEA" customClass="InstagramActivityIndicator" customModule="InstagramActivityIndicator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="256" width="375" height="283"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="eUU-pA-1V3" appends="YES" id="tWA-Wj-zt3"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNj-lh-q9l" customClass="InstagramActivityIndicator" customModule="InstagramActivityIndicator" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="539" width="375" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="EWz-ow-oTv" appends="YES" id="iqt-Qs-qFy"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hkI-zD-D4x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8g8-sh-0xB"/>
+                            <constraint firstItem="hkI-zD-D4x" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="YUL-yY-Fzd"/>
+                            <constraint firstItem="hkI-zD-D4x" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="rtP-rM-GRo"/>
+                            <constraint firstItem="hkI-zD-D4x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sMx-j0-aDZ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2dT-Er-bN9">
+                    <connections>
+                        <action selector="handleTap:" destination="BYZ-38-t0r" id="cGx-a6-Le4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="qdh-Dd-lfU">
+                    <connections>
+                        <action selector="handleTap:" destination="BYZ-38-t0r" id="OOv-6a-U5Y"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="eUU-pA-1V3">
+                    <connections>
+                        <action selector="handleTap:" destination="BYZ-38-t0r" id="eQP-Ao-cZ5"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="EWz-ow-oTv">
+                    <connections>
+                        <action selector="handleTap:" destination="BYZ-38-t0r" id="U6L-oc-6Jm"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

@@ -9,7 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBAction func handleTap(_ recognizer: UITapGestureRecognizer) {
+        guard let indicator = recognizer.view as? InstagramActivityIndicator else { return }
+        
+        if indicator.isAnimating {
+            indicator.stopAnimating()
+        } else {
+            indicator.startAnimating()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
