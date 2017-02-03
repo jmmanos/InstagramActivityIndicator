@@ -9,12 +9,30 @@
 import UIKit
 import QuartzCore
 
-public class InstagramActivityIndicator: UIView {
+@IBDesignable
+public final class InstagramActivityIndicator: UIView {
     public var animationDuration: Double = 2
     public var rotationDuration: Double = 10
+    @IBInspectable public var numSegments: Int = 12 {
+        didSet {
+            updateSegments()
+        }
+    }
+    @IBInspectable public var strokeColor : UIColor = .blue {
+        didSet {
+            segmentLayer?.strokeColor = strokeColor.cgColor
+        }
+    }
+    
+    @IBInspectable public var lineWidth : CGFloat = 8 {
+        didSet {
+            segmentLayer?.lineWidth = lineWidth
+            updateSegments()
+        }
+    }
+    
     public var hidesWhenStopped: Bool = true
     public private(set) var isAnimating = false
-    public var numSegments: Int = 12
     
     private weak var replicatorLayer: CAReplicatorLayer!
     private weak var segmentLayer: CAShapeLayer!
@@ -34,44 +52,44 @@ public class InstagramActivityIndicator: UIView {
         
         layer.addSublayer(replicatorLayer)
         
-        self.replicatorLayer = replicatorLayer
-        
         let dot = CAShapeLayer()
         dot.lineCap = kCALineCapRound
-        dot.strokeColor = UIColor.blue.cgColor
-        dot.lineWidth = 8
+        dot.strokeColor = strokeColor.cgColor
+        dot.lineWidth = lineWidth
         dot.fillColor = nil
+        //dot.backgroundColor = UIColor(white: 0.2, alpha: 0.2).cgColor
         
         replicatorLayer.addSublayer(dot)
         
-        segmentLayer = dot
+        self.replicatorLayer = replicatorLayer
+        self.segmentLayer = dot
     }
     
     override public func layoutSubviews() {
         super.layoutSubviews()
         
-        replicatorLayer.bounds = bounds
-        replicatorLayer.position = CGPoint(x: frame.width/2, y:frame.height/2)
+        let maxRadius = max(0,min(bounds.width, bounds.height))/2
+        replicatorLayer.bounds = CGRect.init(x: 0, y: 0, width: 2*maxRadius, height: 2*maxRadius)
+        replicatorLayer.position = CGPoint(x: bounds.width/2, y:bounds.height/2)
         
         updateSegments()
     }
     
     private func updateSegments() {
+        guard numSegments > 0, let segmentLayer = segmentLayer else { return }
+        
         let angle = 2*CGFloat.pi / CGFloat(numSegments)
         replicatorLayer.instanceCount = numSegments
         replicatorLayer.instanceTransform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
         replicatorLayer.instanceDelay = animationDuration/Double(numSegments)
         
-        let radius: CGFloat = max(0,min(bounds.width, bounds.height))/2 - segmentLayer.lineWidth
-        let x =  radius * sin(angle/2)
-        let y =  radius * cos(angle/2)
-        let width = 2*x
-        let height = radius - y
+        let maxRadius = max(0,min(replicatorLayer.bounds.width, replicatorLayer.bounds.height))/2
+        let radius: CGFloat = maxRadius - lineWidth/2
         
-        segmentLayer.bounds = CGRect(x: 0.0, y: 0.0, width: width, height: height)
-        segmentLayer.position = CGPoint(x: bounds.width/2, y: bounds.height/2 - radius + height)
+        segmentLayer.bounds = CGRect(x:0, y:0, width: 2*maxRadius, height: 2*maxRadius)
+        segmentLayer.position = CGPoint(x: replicatorLayer.bounds.width/2, y: replicatorLayer.bounds.height/2)
         
-        let path = UIBezierPath(arcCenter: CGPoint(x:x, y:radius), radius: radius, startAngle: -angle/2 + 3*CGFloat.pi/2, endAngle: angle/2 + 3*CGFloat.pi/2, clockwise: true)
+        let path = UIBezierPath.init(arcCenter: CGPoint(x: maxRadius, y: maxRadius), radius: radius, startAngle: -angle/2 - CGFloat.pi/2, endAngle: angle/2 - CGFloat.pi/2, clockwise: true)
         
         segmentLayer.path = path.cgPath
     }
