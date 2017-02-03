@@ -45,8 +45,6 @@ public class InstagramActivityIndicator: UIView {
         replicatorLayer.addSublayer(dot)
         
         segmentLayer = dot
-        
-        updateSegments()
     }
     
     override public func layoutSubviews() {
@@ -64,7 +62,7 @@ public class InstagramActivityIndicator: UIView {
         replicatorLayer.instanceTransform = CATransform3DMakeRotation(angle, 0.0, 0.0, 1.0)
         replicatorLayer.instanceDelay = animationDuration/Double(numSegments)
         
-        let radius: CGFloat = max(0,min(replicatorLayer.bounds.width, replicatorLayer.bounds.height))
+        let radius: CGFloat = max(0,min(bounds.width, bounds.height))/2 - segmentLayer.lineWidth
         let x =  radius * sin(angle/2)
         let y =  radius * cos(angle/2)
         let width = 2*x

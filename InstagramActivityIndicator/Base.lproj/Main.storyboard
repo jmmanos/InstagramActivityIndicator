@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12072"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,11 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-zD-D4x">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-zD-D4x">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="668"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kph-Gw-o5v" customClass="InstagramActivityIndicator" customModule="InstagramActivityIndicator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -33,7 +34,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-i3-dOw" customClass="InstagramActivityIndicator" customModule="InstagramActivityIndicator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="128"/>
+                                        <rect key="frame" x="0.0" y="170" width="375" height="158"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -41,7 +42,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G4Q-H7-hEA" customClass="InstagramActivityIndicator" customModule="InstagramActivityIndicator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="256" width="375" height="283"/>
+                                        <rect key="frame" x="0.0" y="340" width="375" height="158"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -49,7 +50,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cNj-lh-q9l" customClass="InstagramActivityIndicator" customModule="InstagramActivityIndicator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="539" width="375" height="128"/>
+                                        <rect key="frame" x="0.0" y="510" width="375" height="158"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <gestureRecognizers/>
                                         <connections>
@@ -61,10 +62,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hkI-zD-D4x" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8g8-sh-0xB"/>
-                            <constraint firstItem="hkI-zD-D4x" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="YUL-yY-Fzd"/>
-                            <constraint firstItem="hkI-zD-D4x" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="rtP-rM-GRo"/>
-                            <constraint firstItem="hkI-zD-D4x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sMx-j0-aDZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hkI-zD-D4x" secondAttribute="trailing" constant="-16" id="2cb-6d-8c3"/>
+                            <constraint firstItem="hkI-zD-D4x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="Jb3-em-Uxm"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hkI-zD-D4x" secondAttribute="bottom" constant="-1" id="Q3e-jX-lTt"/>
+                            <constraint firstItem="hkI-zD-D4x" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="dSh-jt-UsI"/>
                         </constraints>
                     </view>
                 </viewController>
